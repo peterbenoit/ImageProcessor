@@ -80,12 +80,15 @@ new ImageProcessor('https://example.com/image.jpg', {
 - **onProcessed**: Triggered when image processing is complete.
 - **onError**: Triggered on errors.
 
+### CODING GUIDE
+The [CODING_GUIDE.md](CODING_GUIDE.md) provides comprehensive information on the implementation, and configuration.
+
 ### FAQs
 See [FAQ.md](FAQ.md) for more information.
 
 ## Contributing
 
-Contributions are welcome! Please check the [issues](https://github.com/your-repo/ImageProcessor/issues) page for open tasks.
+Contributions are more than welcome! Please check the [issues](https://github.com/peterbenoit/ImageProcessor/issues) page for open tasks.
 
 ## License
 
