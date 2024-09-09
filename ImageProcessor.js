@@ -1,5 +1,5 @@
 /**
- * ImageProcessor Library v1.0.0
+ * ImageProcessor Library v1.0.1
  * https://github.com/peterbenoit/ImageProcessor
  *
  * A lightweight JavaScript library for advanced image processing in the browser.
@@ -27,8 +27,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * @author [Your Name]
- * @version 1.0.0
+ * @author Peter Benoit
+ * @version 1.0.1
  * @license MIT
  */
 class ImageProcessor {
@@ -91,7 +91,12 @@ class ImageProcessor {
         elements.forEach((element) => {
             const imageUrl = element.dataset.img;
             const options = this.extractOptionsFromDataAttributes(element);
-            this.processImage(element, imageUrl, options);
+
+            if (element.classList.contains('sensitive-image')) {
+                this.processSensitiveImage(element, imageUrl, options);
+            } else {
+                this.processImage(element, imageUrl, options);
+            }
         });
     }
 
@@ -130,6 +135,49 @@ class ImageProcessor {
                 opacity: element.dataset.watermarkOpacity ? parseFloat(element.dataset.watermarkOpacity) : this.config.watermarkStyle.opacity,
             },
         };
+    }
+
+    processSensitiveImage(container, imageUrl, options = {}) {
+        const config = { ...this.config, ...options };
+
+        const blurredImg = document.createElement('img');
+        blurredImg.src = imageUrl;
+        blurredImg.style.filter = 'blur(50px)';
+        blurredImg.style.cursor = 'pointer';
+        blurredImg.alt = 'Sensitive Image - Click to view';
+        blurredImg.loading = config.loading;
+        blurredImg.crossOrigin = config.crossorigin;
+        blurredImg.decoding = config.decoding;
+        blurredImg.referrerPolicy = config.referrerPolicy;
+
+        const clearImg = document.createElement('img');
+        clearImg.src = imageUrl;
+        clearImg.style.display = 'none';
+        clearImg.alt = 'Sensitive Image';
+        clearImg.loading = config.loading;
+        clearImg.crossOrigin = config.crossorigin;
+        clearImg.decoding = config.decoding;
+        clearImg.referrerPolicy = config.referrerPolicy;
+
+        const overlay = document.createElement('div');
+        overlay.className = 'overlay';
+        overlay.innerHTML = `<i class="fa-light fa-eye-slash"></i> Sensitive Image`;
+
+        container.appendChild(blurredImg);
+        container.appendChild(clearImg);
+        container.appendChild(overlay);
+
+        blurredImg.addEventListener('click', () => {
+            blurredImg.style.display = 'none';
+            clearImg.style.display = 'block';
+            overlay.style.display = 'none';
+        });
+
+        clearImg.addEventListener('click', () => {
+            clearImg.style.display = 'none';
+            blurredImg.style.display = 'block';
+            overlay.style.display = 'flex';
+        });
     }
 
     processCustomImages(images, options) {
