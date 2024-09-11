@@ -1,4 +1,4 @@
-# Reasons to Process Images via JavaScript Instead of CSS Filters
+# Why JavaScript Instead of CSS Filters?
 
 While I'm a huge fan of using CSS instead of JS whenever possible, here are some reasons why you might want to process images via JavaScript instead of just using CSS filters:
 
