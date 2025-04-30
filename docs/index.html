@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="A lightweight JavaScript library for advanced image processing in the browser. Apply filters, transformations, and watermarks to images."
+        />
+        <meta
+            name="keywords"
+            content="image processing, JavaScript library, filters, transformations, watermarks"
+        />
+        <title>ImageProcessor - Advanced Image Processing Library</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Special+Gothic+Expanded+One&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <!-- Open Graph / Social Media Meta Tags -->
+        <meta property="og:title" content="ImageProcessor - Advanced Image Processing Library" />
+        <meta
+            property="og:description"
+            content="A lightweight JavaScript library for advanced image processing in the browser."
+        />
+        <meta
+            property="og:image"
+            content="https://imageprocessor.vercel.app/images/social-preview.jpg"
+        />
+        <meta property="og:url" content="https://imageprocessor.vercel.app" />
+        <meta name="twitter:card" content="summary_large_image" />
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="container">
+                <div class="navbar-content">
+                    <div class="logo">
+                        <a href="#" class="logo-link">
+                            <img
+                                src="images/logo.svg"
+                                alt="ImageProcessor Logo"
+                                width="32"
+                                height="32"
+                            />
+                            <span>ImageProcessor</span>
+                        </a>
+                    </div>
+                    <nav class="nav-desktop">
+                        <ul class="nav-list">
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#playground">Playground</a></li>
+                            <li><a href="#documentation">Documentation</a></li>
+                            <li>
+                                <a
+                                    href="https://github.com/peterbenoit/ImageProcessor"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >GitHub</a
+                                >
+                            </li>
+                        </ul>
+                    </nav>
+                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <nav class="mobile-menu">
+            <ul class="mobile-nav-list">
+                <li><a href="#features" class="mobile-nav-link">Features</a></li>
+                <li><a href="#playground" class="mobile-nav-link">Playground</a></li>
+                <li><a href="#documentation" class="mobile-nav-link">Documentation</a></li>
+                <li>
+                    <a
+                        href="https://github.com/peterbenoit/ImageProcessor"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="mobile-nav-link"
+                        >GitHub</a
+                    >
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Advanced Image Processing
+                        <span class="accent">in the Browser</span>
+                    </h1>
+                    <p class="hero-description">
+                        A lightweight JavaScript library for applying filters, transformations, and
+                        watermarks to images with minimal code.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#playground" class="btn-primary">Try the Playground</a>
+                        <a href="#documentation" class="btn-secondary">Read Documentation</a>
+                    </div>
+                    <div class="hero-image-container">
+                        <img
+                            src="images/jazz-large.jpg"
+                            alt="Example processed image"
+                            class="hero-image"
+                        />
+                        <div class="hero-image-overlay"></div>
+                        <div class="hero-image-badge">Processed with ImageProcessor.js</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Powerful Features</h2>
+                    <p class="section-description">
+                        ImageProcessor makes it easy to apply complex image processing operations
+                        with just a few lines of code.
+                    </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                                ></polygon>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Powerful Filters</h3>
+                        <p class="feature-description">
+                            Apply filters like grayscale, sepia, invert, brightness, contrast, blur,
+                            saturation, hue rotation, and opacity.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="M15 3h6v6"></path>
+                                <path d="M10 14 21 3"></path>
+                                <path
+                                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Image Transformations</h3>
+                        <p class="feature-description">
+                            Perform transformations such as rotation, cropping, and resizing with
+                            minimal code.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Watermarking</h3>
+                        <p class="feature-description">
+                            Add text or image watermarks with customizable positions, repeats, and
+                            angles.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path
+                                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                ></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Event Hooks</h3>
+                        <p class="feature-description">
+                            Use event hooks for processing start, completion, and errors for
+                            seamless integration.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <rect x="2" y="2" width="8" height="8" rx="2"></rect>
+                                <rect x="14" y="2" width="8" height="8" rx="2"></rect>
+                                <rect x="2" y="14" width="8" height="8" rx="2"></rect>
+                                <rect x="14" y="14" width="8" height="8" rx="2"></rect>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Batch Processing</h3>
+                        <p class="feature-description">
+                            Process multiple images at once with the same or different settings.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Customizable HTML</h3>
+                        <p class="feature-description">
+                            Wrap processed images in customizable HTML elements with specified class
+                            lists.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Playground Section -->
+        <section class="playground" id="playground">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Interactive Playground</h2>
+                    <p class="section-description">
+                        Try out ImageProcessor's features with this interactive playground. Adjust
+                        the settings to see the changes in real-time.
+                    </p>
+                </div>
+
+                <div class="playground-grid">
+                    <div class="playground-preview">
+                        <div class="playground-canvas-container">
+                            <div id="loading-indicator" class="loading-indicator">
+                                <div class="spinner"></div>
+                            </div>
+                            <div id="error-message" class="error-message"></div>
+                            <div id="canvas-container"></div>
+                        </div>
+                    </div>
+
+                    <div class="playground-controls">
+                        <div class="tabs">
+                            <button class="tab-button active" data-tab="filters">Filters</button>
+                            <button class="tab-button" data-tab="transform">Transform</button>
+                            <button class="tab-button" data-tab="watermark">Watermark</button>
+                        </div>
+
+                        <div class="tab-content active" id="filters-tab">
+                            <div class="control-group">
+                                <label for="grayscale">Grayscale</label>
+                                <input
+                                    type="range"
+                                    id="grayscale"
+                                    min="0"
+                                    max="100"
+                                    value="0"
+                                    class="slider"
+                                />
+                            </div>
+
+                            <div class="control-group">
+                                <label for="sepia">Sepia</label>
+                                <input
+                                    type="range"
+                                    id="sepia"
+                                    min="0"
+                                    max="100"
+                                    value="0"
+                                    class="slider"
+                                />
+                            </div>
+
+                            <div class="control-group">
+                                <label for="brightness">Brightness</label>
+                                <input
+                                    type="range"
+                                    id="brightness"
+                                    min="0"
+                                    max="200"
+                                    value="100"
+                                    class="slider"
+                                />
+                            </div>
+
+                            <div class="control-group">
+                                <label for="contrast">Contrast</label>
+                                <input
+                                    type="range"
+                                    id="contrast"
+                                    min="0"
+                                    max="200"
+                                    value="100"
+                                    class="slider"
+                                />
+                            </div>
+
+                            <div class="control-group">
+                                <label for="blur">Blur</label>
+                                <input
+                                    type="range"
+                                    id="blur"
+                                    min="0"
+                                    max="10"
+                                    value="0"
+                                    step="0.1"
+                                    class="slider"
+                                />
+                            </div>
+
+                            <div class="control-group">
+                                <label for="saturation">Saturation</label>
+                                <input
+                                    type="range"
+                                    id="saturation"
+                                    min="0"
+                                    max="200"
+                                    value="100"
+                                    class="slider"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="transform-tab">
+                            <div class="control-group">
+                                <label for="width">Width</label>
+                                <input type="number" id="width" value="600" class="number-input" />
+                            </div>
+
+                            <div class="control-group">
+                                <label for="height">Height</label>
+                                <input type="number" id="height" value="400" class="number-input" />
+                            </div>
+
+                            <div class="control-group">
+                                <label for="rotate">Rotation (degrees)</label>
+                                <input
+                                    type="range"
+                                    id="rotate"
+                                    min="0"
+                                    max="360"
+                                    value="0"
+                                    class="slider"
+                                />
+                                <span id="rotate-value">0°</span>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="watermark-tab">
+                            <div class="control-group">
+                                <label for="watermark-text">Watermark Text</label>
+                                <input
+                                    type="text"
+                                    id="watermark-text"
+                                    placeholder="Enter watermark text"
+                                    class="text-input"
+                                />
+                            </div>
+
+                            <div class="control-group">
+                                <label for="watermark-position">Position</label>
+                                <select id="watermark-position" class="select-input">
+                                    <option value="center">Center</option>
+                                    <option value="top-left">Top Left</option>
+                                    <option value="top-right">Top Right</option>
+                                    <option value="bottom-left">Bottom Left</option>
+                                    <option value="bottom-right">Bottom Right</option>
+                                </select>
+                            </div>
+
+                            <div class="control-group">
+                                <label for="watermark-repeat">Repeat</label>
+                                <select id="watermark-repeat" class="select-input">
+                                    <option value="no-repeat">None</option>
+                                    <option value="repeat">Repeat</option>
+                                    <option value="repeat-x">Repeat Horizontally</option>
+                                    <option value="repeat-y">Repeat Vertically</option>
+                                </select>
+                            </div>
+
+                            <div class="control-group">
+                                <label for="watermark-angle">Angle (degrees)</label>
+                                <input
+                                    type="range"
+                                    id="watermark-angle"
+                                    min="-45"
+                                    max="45"
+                                    value="0"
+                                    class="slider"
+                                />
+                                <span id="watermark-angle-value">0°</span>
+                            </div>
+
+                            <div class="control-group">
+                                <label for="watermark-opacity">Opacity</label>
+                                <input
+                                    type="range"
+                                    id="watermark-opacity"
+                                    min="0"
+                                    max="100"
+                                    value="50"
+                                    class="slider"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="control-actions">
+                            <button id="reset-all" class="btn-primary">Reset All</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documentation Section -->
+        <section class="documentation" id="documentation">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Documentation</h2>
+                    <p class="section-description">
+                        Learn how to integrate and use ImageProcessor in your projects.
+                    </p>
+                </div>
+
+                <div class="documentation-cards">
+                    <!-- Getting Started -->
+                    <div class="doc-card">
+                        <h3 class="doc-title">Getting Started</h3>
+
+                        <div class="doc-section">
+                            <h4 class="doc-subtitle">Installation</h4>
+                            <p class="doc-text">
+                                Include the <code>ImageProcessor.js</code> script in your HTML file:
+                            </p>
+                            <pre
+                                class="code-block"
+                            ><code>&lt;script src="path/to/ImageProcessor.js"&gt;&lt;/script&gt;</code></pre>
+                        </div>
+
+                        <div class="doc-section">
+                            <h4 class="doc-subtitle">Basic Usage</h4>
+                            <p class="doc-text">To apply basic filters and transformations:</p>
+                            <pre class="code-block"><code>// Create a new ImageProcessor instance
+new ImageProcessor('https://example.com/image.jpg', {
+    width: 400,
+    height: 300,
+    grayscale: 'grayscale(100%)',
+    brightness: 'brightness(3)',
+    altText: 'Processed image',
+    targetElement: document.getElementById('image-target'),
+});</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Usage -->
+                    <div class="doc-card">
+                        <h3 class="doc-title">Advanced Usage</h3>
+
+                        <div class="doc-section">
+                            <h4 class="doc-subtitle">Watermarking</h4>
+                            <p class="doc-text">Add text or image watermarks to your images:</p>
+                            <pre class="code-block"><code>// Add a text watermark
+new ImageProcessor('https://example.com/image.jpg', {
+    watermark: 'Confidential',
+    watermarkPosition: 'center',
+    watermarkStyle: {
+        fontSize: '20px',
+        fontFamily: 'Arial',
+        color: 'rgba(255, 255, 255, 0.5)',
+    },
+    targetElement: document.getElementById('image-target'),
+});</code></pre>
+                        </div>
+
+                        <div class="doc-section">
+                            <h4 class="doc-subtitle">Event Hooks</h4>
+                            <p class="doc-text">
+                                Use event hooks for processing start, completion, and errors:
+                            </p>
+                            <pre
+                                class="code-block"
+                            ><code>new ImageProcessor('https://example.com/image.jpg', {
+    grayscale: 'grayscale(50%)',
+    onProcessingStart: () => {
+        console.log('Image processing started');
+        // Show loading indicator
+    },
+    onProcessed: (img) => {
+        console.log('Image processing completed', img);
+        // Hide loading indicator
+    },
+    onError: (error) => {
+        console.error('Error processing image:', error);
+        // Show error message
+    },
+    targetElement: document.getElementById('image-target'),
+});</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- API Reference -->
+                    <div class="doc-card">
+                        <h3 class="doc-title">API Reference</h3>
+
+                        <div class="doc-section doc-table-wrapper">
+                            <table class="doc-table">
+                                <thead>
+                                    <tr>
+                                        <th>Option</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="option-name">width</td>
+                                        <td>number</td>
+                                        <td>Width of the processed image</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="option-name">height</td>
+                                        <td>number</td>
+                                        <td>Height of the processed image</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="option-name">
+                                            cropX, cropY, cropWidth, cropHeight
+                                        </td>
+                                        <td>number</td>
+                                        <td>Crop dimensions</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="option-name">grayscale, sepia, invert</td>
+                                        <td>string</td>
+                                        <td>CSS filter values (e.g., 'grayscale(100%)')</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="option-name">brightness, contrast, blur</td>
+                                        <td>string</td>
+                                        <td>CSS filter values for adjustments</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="option-name">rotate</td>
+                                        <td>number</td>
+                                        <td>Rotation angle in degrees</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="option-name">watermark</td>
+                                        <td>string</td>
+                                        <td>Text or image URL for watermark</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="option-name">watermarkPosition</td>
+                                        <td>string</td>
+                                        <td>Position: 'center', 'top-left', 'top-right', etc.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="option-name">watermarkStyle</td>
+                                        <td>object</td>
+                                        <td>Styling for text watermarks (fontSize, color, etc.)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-copyright">
+                        <p>© <span id="current-year">2024</span> ImageProcessor. MIT License.</p>
+                    </div>
+                    <div class="footer-links">
+                        <a href="#features">Features</a>
+                        <a href="#playground">Playground</a>
+                        <a href="#documentation">Documentation</a>
+                        <a
+                            href="https://github.com/peterbenoit/ImageProcessor"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >GitHub</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="lib/ImageProcessor.js"></script>
+        <script src="js/app.js"></script>
+        <script>
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        </script>
+    </body>
+</html>
