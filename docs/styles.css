@@ -642,6 +642,7 @@ code {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 3rem;
+	max-width: 100%;
 }
 
 .doc-card {
@@ -649,6 +650,8 @@ code {
 	border: 1px solid var(--border);
 	border-radius: 0.5rem;
 	padding: 2rem;
+	width: 100%;
+	overflow-x: hidden;
 }
 
 .doc-title {
@@ -701,8 +704,10 @@ code {
 
 .doc-table-wrapper {
 	overflow-x: auto;
-	margin: 0 -1rem;
-	padding: 0 1rem;
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+	border-radius: 0.5rem;
 }
 
 .doc-table {
@@ -711,6 +716,8 @@ code {
 	border-spacing: 0;
 	font-size: 0.95rem;
 	margin: 1rem 0 2rem;
+	min-width: 600px;
+	/* Ensures table doesn't get too compressed */
 }
 
 .doc-table th {
@@ -752,7 +759,8 @@ code {
 
 @media (min-width: 768px) {
 	.documentation-cards {
-		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		grid-template-columns: 1fr;
+		max-width: 100%;
 	}
 
 	.doc-table {
@@ -760,9 +768,15 @@ code {
 	}
 }
 
+@media (min-width: 1024px) {
+	.documentation-cards {
+		grid-template-columns: 1fr;
+	}
+}
+
 @media (min-width: 1280px) {
 	.documentation-cards {
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: 1fr;
 	}
 }
 
