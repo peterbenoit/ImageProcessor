@@ -641,24 +641,24 @@ code {
 .documentation-cards {
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: 2rem;
+	gap: 3rem;
 }
 
 .doc-card {
 	background-color: var(--card);
 	border: 1px solid var(--border);
 	border-radius: 0.5rem;
-	padding: 1.5rem;
+	padding: 2rem;
 }
 
 .doc-title {
-	font-size: 1.5rem;
+	font-size: 1.8rem;
 	font-weight: 600;
-	margin-bottom: 1rem;
+	margin-bottom: 1.5rem;
 }
 
 .doc-section {
-	margin-bottom: 1.5rem;
+	margin-bottom: 2.5rem;
 }
 
 .doc-section:last-child {
@@ -666,56 +666,74 @@ code {
 }
 
 .doc-subtitle {
-	font-size: 1.125rem;
+	font-size: 1.3rem;
 	font-weight: 500;
-	margin-bottom: 0.5rem;
+	margin-bottom: 1rem;
+	color: var(--accent);
 }
 
 .doc-text {
-	opacity: 0.7;
-	margin-bottom: 1rem;
+	opacity: 0.9;
+	margin-bottom: 1.5rem;
+	font-size: 1rem;
+	line-height: 1.7;
 }
 
 .code-block {
 	background-color: #1e1e1e;
-	padding: 1rem;
-	border-radius: 0.375rem;
+	padding: 1.25rem;
+	border-radius: 0.5rem;
 	overflow-x: auto;
-	margin-bottom: 1rem;
+	margin-bottom: 1.5rem;
 	position: relative;
+	border: 1px solid var(--border);
 }
 
 .code-block code {
 	background: none;
 	color: #e0e0e0;
 	font-family: var(--font-mono);
-	font-size: 0.875rem;
-	line-height: 1.5;
+	font-size: 0.95rem;
+	line-height: 1.6;
 	white-space: pre;
 	padding: 0;
 }
 
 .doc-table-wrapper {
 	overflow-x: auto;
+	margin: 0 -1rem;
+	padding: 0 1rem;
 }
 
 .doc-table {
 	width: 100%;
-	border-collapse: collapse;
-	font-size: 0.875rem;
+	border-collapse: separate;
+	border-spacing: 0;
+	font-size: 0.95rem;
+	margin: 1rem 0 2rem;
 }
 
 .doc-table th {
 	text-align: left;
-	padding: 0.75rem;
+	padding: 1rem 1.5rem;
 	border-bottom: 1px solid var(--border);
 	font-weight: 600;
+	background-color: rgba(59, 130, 246, 0.1);
+}
+
+.doc-table th:first-child {
+	border-top-left-radius: 0.5rem;
+}
+
+.doc-table th:last-child {
+	border-top-right-radius: 0.5rem;
 }
 
 .doc-table td {
-	padding: 0.75rem;
+	padding: 1rem 1.5rem;
 	border-bottom: 1px solid var(--border);
 	vertical-align: top;
+	line-height: 1.6;
 }
 
 .doc-table tr:last-child td {
@@ -725,11 +743,26 @@ code {
 .option-name {
 	font-family: var(--font-mono);
 	color: var(--accent);
+	font-size: 0.95rem;
+	background: rgba(59, 130, 246, 0.1);
+	padding: 0.25rem 0.5rem;
+	border-radius: 0.25rem;
+	display: inline-block;
 }
 
 @media (min-width: 768px) {
 	.documentation-cards {
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	}
+
+	.doc-table {
+		font-size: 1rem;
+	}
+}
+
+@media (min-width: 1280px) {
+	.documentation-cards {
+		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
