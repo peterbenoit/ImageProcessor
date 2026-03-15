@@ -1,0 +1,14 @@
+/* TEAM */
+Developer: Peter Benoit
+Site: https://www.peterbenoit.com
+GitHub: https://github.com/peterbenoit
+Location: United States
+
+/* THANKS */
+To everyone who uses and contributes to open-source software.
+
+/* SITE */
+Last update: 2026/03/14
+Language: English
+Doctype: HTML5
+IDE: Visual Studio Code

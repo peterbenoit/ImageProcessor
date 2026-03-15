@@ -20,9 +20,18 @@
 	<meta property="og:title" content="ImageProcessor - Advanced Image Processing Library" />
 	<meta property="og:description"
 		content="A lightweight JavaScript library for advanced image processing in the browser." />
-	<meta property="og:image" content="https://imgprocessor.vercel.app//images/social-preview.jpg" />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="ImageProcessor" />
+	<meta property="og:image" content="https://imgprocessor.vercel.app/images/social-preview.jpg" />
 	<meta property="og:url" content="https://imgprocessor.vercel.app/" />
 	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="ImageProcessor - Advanced Image Processing Library" />
+	<meta name="twitter:description"
+		content="A lightweight JavaScript library for advanced image processing in the browser." />
+	<meta name="twitter:image" content="https://imgprocessor.vercel.app/images/social-preview.jpg" />
+	<meta name="twitter:creator" content="@peterbenoit" />
+	<link rel="canonical" href="https://imgprocessor.vercel.app/" />
+	<link rel="author" href="humans.txt" />
 </head>
 
 <body>
@@ -232,49 +241,56 @@
 					<div class="tab-content active" id="filters-tab">
 						<div class="control-group">
 							<label for="grayscale">Grayscale</label>
-							<input type="range" id="grayscale" min="0" max="100" value="0" class="slider" />
+							<input type="range" id="grayscale" min="0" max="100" value="0" class="slider"
+								autocomplete="off" />
 						</div>
 
 						<div class="control-group">
 							<label for="sepia">Sepia</label>
-							<input type="range" id="sepia" min="0" max="100" value="0" class="slider" />
+							<input type="range" id="sepia" min="0" max="100" value="0" class="slider"
+								autocomplete="off" />
 						</div>
 
 						<div class="control-group">
 							<label for="brightness">Brightness</label>
-							<input type="range" id="brightness" min="0" max="200" value="100" class="slider" />
+							<input type="range" id="brightness" min="0" max="200" value="100" class="slider"
+								autocomplete="off" />
 						</div>
 
 						<div class="control-group">
 							<label for="contrast">Contrast</label>
-							<input type="range" id="contrast" min="0" max="200" value="100" class="slider" />
+							<input type="range" id="contrast" min="0" max="200" value="100" class="slider"
+								autocomplete="off" />
 						</div>
 
 						<div class="control-group">
 							<label for="blur">Blur</label>
-							<input type="range" id="blur" min="0" max="10" value="0" step="0.1" class="slider" />
+							<input type="range" id="blur" min="0" max="10" value="0" step="0.1" class="slider"
+								autocomplete="off" />
 						</div>
 
 						<div class="control-group">
 							<label for="saturation">Saturation</label>
-							<input type="range" id="saturation" min="0" max="200" value="100" class="slider" />
+							<input type="range" id="saturation" min="0" max="200" value="100" class="slider"
+								autocomplete="off" />
 						</div>
 					</div>
 
 					<div class="tab-content" id="transform-tab">
 						<div class="control-group">
 							<label for="width">Width</label>
-							<input type="number" id="width" value="600" class="number-input" />
+							<input type="number" id="width" value="600" class="number-input" autocomplete="off" />
 						</div>
 
 						<div class="control-group">
 							<label for="height">Height</label>
-							<input type="number" id="height" value="400" class="number-input" />
+							<input type="number" id="height" value="400" class="number-input" autocomplete="off" />
 						</div>
 
 						<div class="control-group">
 							<label for="rotate">Rotation (degrees)</label>
-							<input type="range" id="rotate" min="0" max="360" value="0" class="slider" />
+							<input type="range" id="rotate" min="0" max="360" value="0" class="slider"
+								autocomplete="off" />
 							<span id="rotate-value">0°</span>
 						</div>
 					</div>
@@ -282,8 +298,8 @@
 					<div class="tab-content" id="watermark-tab">
 						<div class="control-group">
 							<label for="watermark-text">Watermark Text</label>
-							<input type="text" id="watermark-text" placeholder="Enter watermark text"
-								class="text-input" />
+							<input type="text" id="watermark-text" placeholder="Enter watermark text" class="text-input"
+								autocomplete="off" />
 						</div>
 
 						<div class="control-group">
@@ -309,13 +325,15 @@
 
 						<div class="control-group">
 							<label for="watermark-angle">Angle (degrees)</label>
-							<input type="range" id="watermark-angle" min="-45" max="45" value="0" class="slider" />
+							<input type="range" id="watermark-angle" min="-45" max="45" value="0" class="slider"
+								autocomplete="off" />
 							<span id="watermark-angle-value">0°</span>
 						</div>
 
 						<div class="control-group">
 							<label for="watermark-opacity">Opacity</label>
-							<input type="range" id="watermark-opacity" min="0" max="100" value="50" class="slider" />
+							<input type="range" id="watermark-opacity" min="0" max="100" value="50" class="slider"
+								autocomplete="off" />
 						</div>
 					</div>
 
