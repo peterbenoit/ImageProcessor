@@ -16,7 +16,21 @@ A lightweight JavaScript library for advanced image processing in the browser. S
 
 ### Installation
 
-Include the `ImageProcessor.js` script in your HTML file:
+#### Via CDN (recommended)
+
+Load ImageProcessor.js directly from jsDelivr — no build step or download required:
+
+```html
+<!-- Latest version (tracks the main branch) -->
+<script src="https://cdn.jsdelivr.net/gh/peterbenoit/ImageProcessor@main/ImageProcessor.js"></script>
+
+<!-- Pinned to a specific release -->
+<script src="https://cdn.jsdelivr.net/gh/peterbenoit/ImageProcessor@v1.0.1/ImageProcessor.js"></script>
+```
+
+#### Self-hosted
+
+Download `ImageProcessor.js` and include it in your HTML file:
 
 ```html
 <script src="path/to/ImageProcessor.js"></script>

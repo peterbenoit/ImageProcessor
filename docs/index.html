@@ -361,9 +361,21 @@
 					<h3 class="doc-title">Getting Started</h3>
 
 					<div class="doc-section">
-						<h4 class="doc-subtitle">Installation</h4>
+						<h4 class="doc-subtitle">Installation via CDN</h4>
 						<p class="doc-text">
-							Include the <code>ImageProcessor.js</code> script in your HTML file:
+							Load ImageProcessor.js directly from jsDelivr — no build step or download required:
+						</p>
+						<pre class="code-block"><code>&lt;!-- Latest version (tracks the main branch) --&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/peterbenoit/ImageProcessor@main/ImageProcessor.js"&gt;&lt;/script&gt;
+
+&lt;!-- Pinned to a specific release --&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/peterbenoit/ImageProcessor@v1.0.1/ImageProcessor.js"&gt;&lt;/script&gt;</code></pre>
+					</div>
+
+					<div class="doc-section">
+						<h4 class="doc-subtitle">Self-hosted</h4>
+						<p class="doc-text">
+							Download <code>ImageProcessor.js</code> and include it in your HTML file:
 						</p>
 						<pre
 							class="code-block"><code>&lt;script src="path/to/ImageProcessor.js"&gt;&lt;/script&gt;</code></pre>
